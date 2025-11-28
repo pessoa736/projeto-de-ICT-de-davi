@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Users } from "@/components/icons"
+import { Users, Wind, Zap, Leaf, Globe, Target, Book } from "@/components/icons"
 import { SlideLayout, SlideContainer } from "./SlideLayout"
 import { teamMembers } from "@/data/slides-data"
 
@@ -30,7 +30,14 @@ export function TeamSlide() {
                 <div
                   className={`w-16 h-16 mx-auto ${member.bgColor} rounded-full flex items-center justify-center text-2xl mb-2`}
                 >
-                  {member.emoji}
+                  {member.icon === "users" && <Users />}
+                  {member.icon === "wind" && <Wind />}
+                  {member.icon === "zap" && <Zap />}
+                  {member.icon === "leaf" && <Leaf />}
+                  {member.icon === "globe" && <Globe />}
+                  {member.icon === "target" && <Target />}
+                  {member.icon === "book" && <Book />}
+                  {!member.icon && member.emoji}
                 </div>
                 <CardTitle className={`text-lg ${member.textColor}`}>
                   {member.name}

@@ -56,7 +56,7 @@ export interface ContentBlock {
 
 export interface CardData {
   emoji?: string
-  icon?: string
+  icon?: string // Make icon optional
   title: string
   titleColor?: string
   description: string
@@ -65,13 +65,15 @@ export interface CardData {
 }
 
 export interface ListItem {
-  emoji: string
+  emoji?: string // Make emoji optional
+  icon?: string
   title: string
   description: string
 }
 
 export interface HighlightBlock {
-  emoji?: string
+  emoji?: string // Make emoji optional
+  icon?: string
   text: string
   emphasis?: string
 }
@@ -79,7 +81,8 @@ export interface HighlightBlock {
 export interface TeamMember {
   name: string
   role: string
-  emoji: string
+  emoji?: string // Make emoji optional
+  icon?: string
   image?: string
 }
 
@@ -144,7 +147,7 @@ export const slidesContent: SlideContent[] = [
       }
     ],
     highlight: {
-      emoji: "💡",
+      icon: "zap",
       text: "As ODS buscam garantir condições dignas de vida para todas as pessoas, sem comprometer os recursos das futuras gerações.",
       emphasis: "condições dignas de vida para todas as pessoas"
     }
@@ -258,8 +261,8 @@ export const slidesContent: SlideContent[] = [
       }
     ],
     listItems: [
-      { emoji: "✅", title: "Vantagens", description: "Fonte inesgotável e renovável • Não emite gases poluentes • Baixo custo de operação • Pode coexistir com atividades agrícolas" },
-      { emoji: "🌍", title: "Brasil", description: "O Brasil possui grande potencial eólico, especialmente na região Nordeste, onde os ventos são constantes e intensos ao longo do ano." }
+      { icon: "zap", title: "Vantagens", description: "Fonte inesgotável e renovável • Não emite gases poluentes • Baixo custo de operação • Pode coexistir com atividades agrícolas" },
+      { icon: "globe", title: "Brasil", description: "O Brasil possui grande potencial eólico, especialmente na região Nordeste, onde os ventos são constantes e intensos ao longo do ano." }
     ]
   },
 
@@ -279,26 +282,26 @@ export const slidesContent: SlideContent[] = [
     subtitle: "A tecnologia por trás da energia eólica",
     cards: [
       {
-        emoji: "🔄",
+        icon: "wind",
         title: "Rotor",
         titleColor: "text-[#74C365]",
         description: "Composto pelas pás que captam a energia do vento e transferem para o eixo."
       },
       {
-        emoji: "⚙️",
+        icon: "zap",
         title: "Nacele",
         titleColor: "text-[#74C365]",
         description: "Abriga o gerador, multiplicador de velocidade e sistemas de controle."
       },
       {
-        emoji: "🗼",
+        icon: "users",
         title: "Torre",
         titleColor: "text-[#74C365]",
         description: "Estrutura que eleva o rotor para captar ventos mais fortes e constantes."
       }
     ],
     highlight: {
-      emoji: "🎯",
+      icon: "target",
       text: "Nosso grupo desenvolveu uma maquete funcional de um aerogerador para demonstrar o funcionamento desta tecnologia limpa e sustentável, destacando a importância das energias renováveis para o desenvolvimento sustentável.",
       emphasis: "maquete funcional de um aerogerador"
     }
@@ -319,25 +322,25 @@ export const slidesContent: SlideContent[] = [
     title: "Por que a ODS 7 é importante?",
     cards: [
       {
-        emoji: "💡",
+        icon: "zap",
         title: "Desenvolvimento",
         titleColor: "text-[#74C365]",
         description: "A energia está ligada ao desenvolvimento econômico, saúde, educação e qualidade de vida."
       },
       {
-        emoji: "🌡️",
+        icon: "target",
         title: "Clima",
         titleColor: "text-[#74C365]",
         description: "A expansão de energia renovável contribui para reduzir emissões de gases de efeito estufa e combater as mudanças climáticas."
       },
       {
-        emoji: "🌍",
+        icon: "globe",
         title: "Inclusão Social",
         titleColor: "text-[#74C365]",
         description: "A falta de acesso à energia ainda afeta milhões de pessoas no mundo, limitando seu desenvolvimento social e econômico."
       },
       {
-        emoji: "🔮",
+        icon: "book",
         title: "Futuro",
         titleColor: "text-[#74C365]",
         description: "Incentiva a transição global para energias limpas, garantindo que ninguém fique sem acesso aos benefícios que a energia moderna proporciona."
@@ -363,37 +366,37 @@ export const slidesContent: SlideContent[] = [
     title: "Como as Engenharias contribuem?",
     cards: [
       {
-        emoji: "⚡",
+        icon: "zap",
         title: "Engenharia Elétrica",
         titleColor: "text-[#DBE64C]",
         description: "Projeta usinas solares, eólicas e hidrelétricas. Moderniza redes de transmissão e distribuição de energia."
       },
       {
-        emoji: "⚙️",
+        icon: "zap",
         title: "Engenharia Mecânica",
         titleColor: "text-[#74C365]",
         description: "Desenvolve turbinas e aerogeradores mais eficientes, reduzindo desperdícios e aumentando o aproveitamento."
       },
       {
-        emoji: "🔋",
+        icon: "zap",
         title: "Engenharia de Energia",
         titleColor: "text-[#74C365]",
         description: "Planeja a expansão de fontes limpas, analisa viabilidade e cria estratégias para tecnologias sustentáveis."
       },
       {
-        emoji: "🏗️",
+        icon: "users",
         title: "Engenharia Civil",
         titleColor: "text-[#DBE64C]",
         description: "Constrói torres eólicas, fundações de painéis solares e estruturas de usinas de energia renovável."
       },
       {
-        emoji: "💻",
+        icon: "users",
         title: "Eng. Computação/Software",
         titleColor: "text-[#74C365]",
         description: "Cria smart grids e sistemas de automação que tornam o fornecimento mais seguro e eficiente."
       },
       {
-        emoji: "🌿",
+        icon: "leaf",
         title: "Engenharia Ambiental",
         titleColor: "text-[#74C365]",
         description: "Avalia impactos ambientais e propõe soluções sustentáveis para o crescimento energético."
@@ -421,26 +424,26 @@ export const slidesContent: SlideContent[] = [
     imageCaption: "IEA, 2023 • Total: 622 milhões de TJ",
     cards: [
       {
-        emoji: "🛢️",
+        icon: "zap",
         title: "Petróleo e derivados",
         titleColor: "text-[#DBE64C]",
         description: "30,2% - Principal fonte mundial"
       },
       {
-        emoji: "⛏️",
+        icon: "zap",
         title: "Carvão Mineral",
         titleColor: "text-[#74C365]",
         description: "27,6% - Segunda maior fonte"
       },
       {
-        emoji: "🔥",
+        icon: "zap",
         title: "Gás Natural",
         titleColor: "text-[#74C365]",
         description: "23,1% - Terceira maior fonte"
       }
     ],
     highlight: {
-      emoji: "⚠️",
+      icon: "zap",
       text: "Apenas 14% da matriz mundial é renovável! Combustíveis fósseis dominam com mais de 80%.",
       emphasis: "80%"
     }
@@ -463,26 +466,26 @@ export const slidesContent: SlideContent[] = [
     imageCaption: "BEN, 2025 • Total: 322 milhões de tep",
     cards: [
       {
-        emoji: "🛢️",
+        icon: "zap",
         title: "Petróleo e derivados",
         titleColor: "text-[#DBE64C]",
         description: "34,0% - Principal fonte"
       },
       {
-        emoji: "🌾",
+        icon: "leaf",
         title: "Derivados da cana",
         titleColor: "text-[#74C365]",
         description: "16,7% - Etanol e biomassa"
       },
       {
-        emoji: "💧",
+        icon: "leaf",
         title: "Hidráulica",
         titleColor: "text-[#74C365]",
         description: "11,6% - Energia limpa"
       }
     ],
     highlight: {
-      emoji: "✅",
+      icon: "zap",
       text: "Brasil tem 47,4% de fontes renováveis vs apenas 14,3% do mundo!",
       emphasis: "47,4% de fontes renováveis"
     }
@@ -505,20 +508,20 @@ export const slidesContent: SlideContent[] = [
     imageCaption: "Comparação de fontes renováveis e não renováveis",
     cards: [
       {
-        emoji: "🇧🇷",
+        icon: "globe",
         title: "Brasil 2022",
         titleColor: "text-[#74C365]",
         description: "47,4% Renováveis • 52,7% Não Renováveis"
       },
       {
-        emoji: "🌍",
+        icon: "globe",
         title: "Mundo 2022",
         titleColor: "text-[#DBE64C]",
         description: "14,3% Renováveis • 85,7% Não Renováveis"
       }
     ],
     highlight: {
-      emoji: "🏆",
+      icon: "target",
       text: "O Brasil é 3x mais renovável que a média mundial na matriz energética!",
       emphasis: "3x mais renovável"
     }
@@ -541,26 +544,26 @@ export const slidesContent: SlideContent[] = [
     imageCaption: "IEA, 2023 • Total: 29,3 milhões de GWh",
     cards: [
       {
-        emoji: "⛏️",
+        icon: "zap",
         title: "Carvão Mineral",
         titleColor: "text-[#DBE64C]",
         description: "35,8% - Maior fonte elétrica mundial"
       },
       {
-        emoji: "🔥",
+        icon: "zap",
         title: "Gás Natural",
         titleColor: "text-[#74C365]",
         description: "22,3% - Segunda maior fonte"
       },
       {
-        emoji: "💧",
+        icon: "leaf",
         title: "Hidráulica",
         titleColor: "text-[#74C365]",
         description: "15,3% - Principal renovável"
       }
     ],
     highlight: {
-      emoji: "⚠️",
+      icon: "zap",
       text: "Carvão + Gás = 58% da eletricidade mundial vem de combustíveis fósseis!",
       emphasis: "58% da eletricidade mundial"
     }
@@ -583,26 +586,26 @@ export const slidesContent: SlideContent[] = [
     imageCaption: "BEN, 2025 • Total: 751,3 TWh",
     cards: [
       {
-        emoji: "💧",
+        icon: "leaf",
         title: "Hidráulica",
         titleColor: "text-[#74C365]",
         description: "55,3% - Mais da metade!"
       },
       {
-        emoji: "💨",
+        icon: "wind",
         title: "Eólica",
         titleColor: "text-[#74C365]",
         description: "14,1% - Em forte crescimento"
       },
       {
-        emoji: "☀️",
+        icon: "zap",
         title: "Solar",
         titleColor: "text-[#DBE64C]",
         description: "9,3% - Expansão acelerada"
       }
     ],
     highlight: {
-      emoji: "🌱",
+      icon: "leaf",
       text: "A matriz elétrica brasileira é 86,1% renovável! Líder mundial em energia limpa.",
       emphasis: "86,1% renovável"
     }
@@ -625,20 +628,20 @@ export const slidesContent: SlideContent[] = [
     imageCaption: "Comparação de fontes renováveis e não renováveis",
     cards: [
       {
-        emoji: "🇧🇷",
+        icon: "globe",
         title: "Brasil 2022",
         titleColor: "text-[#74C365]",
         description: "86,1% Renováveis • 13,9% Não Renováveis"
       },
       {
-        emoji: "🌍",
+        icon: "globe",
         title: "Mundo 2022",
         titleColor: "text-[#DBE64C]",
         description: "29,5% Renováveis • 70,5% Não Renováveis"
       }
     ],
     highlight: {
-      emoji: "🏆",
+      icon: "target",
       text: "Brasil tem quase 3x mais eletricidade renovável que o mundo! 86% vs 30%",
       emphasis: "3x mais eletricidade renovável"
     }
@@ -660,37 +663,37 @@ export const slidesContent: SlideContent[] = [
     subtitle: "6 iniciativas em implementação para a ODS 7",
     cards: [
       {
-        emoji: "🏭",
+        icon: "zap",
         title: "IDDI - Descarbonização Industrial",
         titleColor: "text-[#DBE64C]",
         description: "Coligação para descarbonizar indústrias pesadas: aço, cimento e concreto com baixo carbono."
       },
       {
-        emoji: "📊",
+        icon: "book",
         title: "ICAT - Transparência Climática",
         titleColor: "text-[#74C365]",
         description: "Elaboração de planos setoriais de mitigação e sistema de Monitoramento, Relato e Verificação."
       },
       {
-        emoji: "❄️",
+        icon: "zap",
         title: "Redução de HFC - Kigali",
         titleColor: "text-[#74C365]",
         description: "Plano para reduzir consumo de HFC em 10% até 2029, cumprindo a Emenda de Kigali."
       },
       {
-        emoji: "🚀",
+        icon: "zap",
         title: "A2D - Acelerar para Demonstrar",
         titleColor: "text-[#DBE64C]",
         description: "Comercialização de tecnologias de energia limpa: minerais críticos, hidrogênio limpo e descarbonização."
       },
       {
-        emoji: "🎯",
+        icon: "target",
         title: "Parceria Net Zero 2050",
         titleColor: "text-[#74C365]",
         description: "Visão de longo prazo para descarbonização industrial, facilitando parcerias público-privadas."
       },
       {
-        emoji: "🌾",
+        icon: "leaf",
         title: "Biogás para Agroindústria",
         titleColor: "text-[#74C365]",
         description: "Promoção da mobilidade baseada em biogás e soluções energéticas para cadeias agroindustriais."
@@ -731,9 +734,9 @@ export const slidesContent: SlideContent[] = [
       }
     ],
     listItems: [
-      { emoji: "💧", title: "Hidrelétrica", description: "Principal fonte renovável" },
-      { emoji: "💨", title: "Eólica", description: "Crescimento acelerado" },
-      { emoji: "☀️", title: "Solar", description: "Grande potencial" }
+      { icon: "leaf", title: "Hidrelétrica", description: "Principal fonte renovável" },
+      { icon: "wind", title: "Eólica", description: "Crescimento acelerado" },
+      { icon: "zap", title: "Solar", description: "Grande potencial" }
     ]
   },
 
@@ -752,12 +755,13 @@ export const slidesContent: SlideContent[] = [
     title: "Nossa Equipe",
     icon: "users",
     teamMembers: [
-      { name: "Davi dos Santos Passos", role: "Desenvolvedor do Site e Pesquisa", emoji: "👨‍💻", image: "/componentes do Grupo/davi.jpeg" },
-      { name: "José Pedro Barros dos Santos", role: "Banner e Pesquisa", emoji: "🎨", image: "/componentes do Grupo/jose.jpeg" },
-      { name: "Luiz Guilherme Marinho Da Cunha", role: "Maquete", emoji: "🔧", image: "/componentes do Grupo/luiz.png" },
-      { name: "Igor Daniel Meneses Fonseca", role: "Banner e Maquete", emoji: "🛠️", image: "/componentes do Grupo/igor.png" },
-      { name: "Senildo Edson da Silva Junior", role: "Maquete", emoji: "⚡", image: "/componentes do Grupo/senildo.png" },
-      { name: "Luis Eduardo", role: "Apresentação e Pesquisa", emoji: "�", image: "/componentes do Grupo/luis eduardo.jpeg" }
+      { name: "Davi dos Santos Passos", role: "Desenvolvedor do Site e Pesquisa", icon: "users", image: "/componentes do Grupo/davi.jpeg" },
+      { name: "José Pedro Barros dos Santos", role: "Banner e Pesquisa", icon: "users", image: "/componentes do Grupo/jose.jpeg" },
+      { name: "Luiz Guilherme Marinho Da Cunha", role: "Maquete", icon: "users", image: "/componentes do Grupo/luiz.png" },
+      { name: "Igor Daniel Meneses Fonseca", role: "Banner e Maquete", icon: "users", image: "/componentes do Grupo/igor.png" },
+      { name: "Senildo Edson da Silva Junior", role: "Maquete", icon: "users", image: "/componentes do Grupo/senildo.png" },
+      { name: "Luis Eduardo", role: "Apresentação e Pesquisa", icon: "users", image: "/componentes do Grupo/luis eduardo.jpeg" },
+      { name: "Ellen", role: "Participante", icon: "users", image: "/componentes do Grupo/ellen.jpeg" }
     ],
     footer: {
       lines: ["ICT – Introdução à Ciência e Tecnologia"],
@@ -789,14 +793,14 @@ export const slidesContent: SlideContent[] = [
       }
     ],
     highlight: {
-      emoji: "🌱",
+      icon: "leaf",
       text: "A energia renovável é o caminho para um mundo melhor!"
     },
     listItems: [
-      { emoji: "☀️", title: "Solar", description: "" },
-      { emoji: "💨", title: "Eólica", description: "" },
-      { emoji: "💧", title: "Hidrelétrica", description: "" },
-      { emoji: "🌿", title: "Biomassa", description: "" }
+      { icon: "zap", title: "Solar", description: "" },
+      { icon: "wind", title: "Eólica", description: "" },
+      { icon: "leaf", title: "Hidrelétrica", description: "" },
+      { icon: "leaf", title: "Biomassa", description: "" }
     ],
     footer: {
       lines: ["Obrigado pela atenção!", "ICT • UFRN • 2025"]
@@ -819,18 +823,18 @@ export const slidesContent: SlideContent[] = [
     subtitle: "Base de dados e pesquisas utilizadas",
     listItems: [
       { 
-        emoji: "🔗", 
+        icon: "book", 
         title: "EPE - Empresa de Pesquisa Energética", 
         description: "Matriz Energética e Elétrica. Disponível em: https://www.epe.gov.br/pt/abcdenergia/matriz-energetica-e-eletrica" 
       },
       { 
-        emoji: "🇺🇳", 
+        icon: "globe", 
         title: "Nações Unidas Brasil", 
         description: "Objetivo de Desenvolvimento Sustentável 7. Disponível em: https://brasil.un.org/pt-br/sdgs/7" 
       }
     ],
     highlight: {
-      emoji: "📚",
+      icon: "book",
       text: "A pesquisa foi fundamentada em dados oficiais do governo brasileiro e da ONU.",
       emphasis: "dados oficiais"
     }

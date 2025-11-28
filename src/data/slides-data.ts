@@ -3,7 +3,7 @@ export const teamMembers = [
   {
     name: "Davi dos Santos Passos",
     role: "Desenvolvedor do Site e Pesquisa",
-    emoji: "",
+    icon: "users",
     gradient: "from-[#DBE64C]/20 to-[#74C365]/20",
     border: "border-[#DBE64C]/40",
     textColor: "text-[#DBE64C]",
@@ -13,7 +13,7 @@ export const teamMembers = [
   {
     name: "José Pedro Barros dos Santos",
     role: "Banner e Pesquisa",
-    emoji: "",
+    icon: "users",
     gradient: "from-[#1E488F]/30 to-[#001F3F]/30",
     border: "border-[#1E488F]/40",
     textColor: "text-[#74C365]",
@@ -23,7 +23,7 @@ export const teamMembers = [
   {
     name: "Luiz Guilherme Marinho Da Cunha",
     role: "Maquete",
-    emoji: "",
+    icon: "users",
     gradient: "from-[#00804C]/20 to-[#74C365]/20",
     border: "border-[#00804C]/40",
     textColor: "text-[#74C365]",
@@ -33,7 +33,7 @@ export const teamMembers = [
   {
     name: "Igor Daniel Meneses Fonseca",
     role: "Banner e Maquete",
-    emoji: "",
+    icon: "users",
     gradient: "from-[#74C365]/20 to-[#DBE64C]/20",
     border: "border-[#74C365]/40",
     textColor: "text-[#DBE64C]",
@@ -43,7 +43,7 @@ export const teamMembers = [
   {
     name: "Senildo Edson da Silva Junior",
     role: "Maquete",
-    emoji: "",
+    icon: "users",
     gradient: "from-[#1E488F]/20 to-[#00804C]/20",
     border: "border-[#1E488F]/40",
     textColor: "text-[#DBE64C]",
@@ -53,7 +53,7 @@ export const teamMembers = [
   {
     name: "Luis Eduardo",
     role: "Apresentação e Pesquisa",
-    emoji: "",
+    icon: "users",
     gradient: "from-[#74C365]/20 to-[#DBE64C]/20",
     border: "border-[#74C365]/40",
     textColor: "text-[#DBE64C]",
@@ -63,12 +63,22 @@ export const teamMembers = [
   {
     name: "Novo Participante",
     role: "Participante",
-    emoji: "👋",
+    icon: "users",
     gradient: "from-[#1E488F]/20 to-[#00804C]/20",
     border: "border-[#1E488F]/40",
     textColor: "text-[#DBE64C]",
     descColor: "text-[#F6F7ED]/80",
     bgColor: "bg-[#1E488F]/20",
+  },
+  {
+    name: "Ellen",
+    role: "Participante",
+    icon: "users",
+    gradient: "from-[#FFB86B]/20 to-[#FF7A7A]/20",
+    border: "border-[#FFB86B]/40",
+    textColor: "text-[#FF7A7A]",
+    descColor: "text-[#F6F7ED]/80",
+    bgColor: "bg-[#FFB86B]/20",
   },
 ] as const
 
@@ -138,17 +148,17 @@ export const odsPillars = [
 // Componentes do aerogerador
 export const aerogeneratorParts = [
   {
-    emoji: "🔄",
+    icon: "wind",
     title: "Rotor",
     description: "Composto pelas pás que captam a energia do vento e transferem para o eixo.",
   },
   {
-    emoji: "⚙️",
+    icon: "zap",
     title: "Nacele",
     description: "Abriga o gerador, multiplicador de velocidade e sistemas de controle.",
   },
   {
-    emoji: "🗼",
+    icon: "users",
     title: "Torre",
     description: "Estrutura que eleva o rotor para captar ventos mais fortes e constantes.",
   },
@@ -172,22 +182,22 @@ export const windSteps = [
 // Importância da ODS 7
 export const importanceItems = [
   {
-    emoji: "💡",
+    icon: "zap",
     title: "Desenvolvimento",
     description: "A energia está ligada ao desenvolvimento econômico, saúde, educação e qualidade de vida.",
   },
   {
-    emoji: "🌡️",
+    icon: "target",
     title: "Clima",
     description: "A expansão de energia renovável contribui para reduzir emissões de gases de efeito estufa e combater as mudanças climáticas.",
   },
   {
-    emoji: "🌍",
+    icon: "globe",
     title: "Inclusão Social",
     description: "A falta de acesso à energia ainda afeta milhões de pessoas no mundo, limitando seu desenvolvimento social e econômico.",
   },
   {
-    emoji: "🔮",
+    icon: "book",
     title: "Futuro",
     description: "Incentiva a transição global para energias limpas, garantindo que ninguém fique sem acesso aos benefícios que a energia moderna proporciona.",
   },
@@ -218,15 +228,15 @@ export const brazilGoals = [
 
 // Fontes de energia no Brasil
 export const brazilEnergySources = [
-  { emoji: "💧", title: "Hidrelétrica", subtitle: "Principal fonte renovável" },
-  { emoji: "💨", title: "Eólica", subtitle: "Crescimento acelerado" },
-  { emoji: "☀️", title: "Solar", subtitle: "Grande potencial" },
+  { icon: "leaf", title: "Hidrelétrica", subtitle: "Principal fonte renovável" },
+  { icon: "wind", title: "Eólica", subtitle: "Crescimento acelerado" },
+  { icon: "zap", title: "Solar", subtitle: "Grande potencial" },
 ] as const
 
 // Tipos de energia renovável
 export const renewableTypes = [
-  { emoji: "☀️", name: "Solar", borderColor: "border-[#DBE64C]", textColor: "text-[#DBE64C]" },
-  { emoji: "💨", name: "Eólica", borderColor: "border-[#74C365]", textColor: "text-[#74C365]" },
-  { emoji: "💧", name: "Hidrelétrica", borderColor: "border-[#74C365]", textColor: "text-[#74C365]" },
-  { emoji: "🌿", name: "Biomassa", borderColor: "border-[#DBE64C]", textColor: "text-[#DBE64C]" },
+  { icon: "zap", name: "Solar", borderColor: "border-[#DBE64C]", textColor: "text-[#DBE64C]" },
+  { icon: "wind", name: "Eólica", borderColor: "border-[#74C365]", textColor: "text-[#74C365]" },
+  { icon: "leaf", name: "Hidrelétrica", borderColor: "border-[#74C365]", textColor: "text-[#74C365]" },
+  { icon: "leaf", name: "Biomassa", borderColor: "border-[#DBE64C]", textColor: "text-[#DBE64C]" },
 ] as const

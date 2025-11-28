@@ -62,6 +62,46 @@ const Icons = {
       <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
     </svg>
   )
+  ,
+  sun: (
+    <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" strokeWidth="2" />
+      <path strokeWidth="2" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  ),
+  moon: (
+    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeWidth="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  ),
+  battery: (
+    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <rect x="2" y="7" width="18" height="10" rx="2" ry="2" strokeWidth="2" />
+      <line x1="22" y1="11" x2="22" y2="13" strokeWidth="2" />
+      <rect x="6" y="10" width="6" height="4" strokeWidth="2" />
+    </svg>
+  ),
+  bar: (
+    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <line strokeWidth="2" strokeLinecap="round" x1="12" y1="20" x2="12" y2="10" />
+      <line strokeWidth="2" strokeLinecap="round" x1="18" y1="20" x2="18" y2="4" />
+      <line strokeWidth="2" strokeLinecap="round" x1="6" y1="20" x2="6" y2="16" />
+    </svg>
+  ),
+  pin: (
+    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeWidth="2" d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0z" />
+      <circle cx="12" cy="10" r="3" strokeWidth="2" />
+    </svg>
+  ),
+  plug: (
+    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeWidth="2" d="M7 7V3" />
+      <path strokeWidth="2" d="M17 7V3" />
+      <path strokeWidth="2" d="M12 11v6" />
+      <rect x="7" y="11" width="10" height="6" rx="2" ry="2" strokeWidth="2" />
+    </svg>
+  )
 }
 
 // Configurações de transição
@@ -328,7 +368,7 @@ function TwoColumnsLayout({ slide }: { slide: SlideContent }) {
             <motion.div key={i} variants={itemVariants}>
               <Card className="bg-black/50 border-mantis/40 text-white">
                 <CardHeader>
-                  <CardTitle className="text-xl text-mantis">{item.emoji} {item.title}</CardTitle>
+                  <CardTitle className="text-xl text-mantis">{item.icon ? Icons[item.icon as keyof typeof Icons] : item.emoji} {item.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-white">
                   {item.description.split(' • ').map((part, j) => (
@@ -344,7 +384,7 @@ function TwoColumnsLayout({ slide }: { slide: SlideContent }) {
       {slide.highlight && (
         <motion.div variants={itemVariants} className="mt-8 p-6 bg-black/50 rounded-2xl border border-spring/40">
           <p className="text-xl text-center text-white">
-            {slide.highlight.emoji} {slide.highlight.text.split(slide.highlight.emphasis || "").map((part, i, arr) => (
+            {slide.highlight?.icon ? Icons[slide.highlight.icon as keyof typeof Icons] : slide.highlight?.emoji} {slide.highlight.text.split(slide.highlight.emphasis || "").map((part, i, arr) => (
               <span key={i}>
                 {part}
                 {i < arr.length - 1 && <strong className="text-spring">{slide.highlight!.emphasis}</strong>}
@@ -379,12 +419,13 @@ function ThreeCardsLayout({ slide }: { slide: SlideContent }) {
           >
             <Card className="bg-black/50 border-mantis/40 text-white backdrop-blur-sm h-full">
               <CardHeader className="text-center">
-                {card.emoji && <div className="text-4xl mb-2">{card.emoji}</div>}
-                {card.icon && (
+                {card.icon ? (
                   <div className="mx-auto mb-4 p-4 bg-white/10 rounded-full w-fit">
                     {Icons[card.icon as keyof typeof Icons]}
                   </div>
-                )}
+                ) : card.emoji ? (
+                  <div className="text-4xl mb-2">{card.emoji}</div>
+                ) : null}
                 <CardTitle className={`text-xl ${card.titleColor}`}>{card.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-center text-white">{card.description}</CardContent>
@@ -397,7 +438,7 @@ function ThreeCardsLayout({ slide }: { slide: SlideContent }) {
         <motion.div variants={itemVariants}>
           <Card className="mt-6 bg-black/60 border-spring/40 text-white">
             <CardContent className="py-6 text-center text-lg">
-              {slide.highlight.emoji && <span className="mr-2">{slide.highlight.emoji}</span>}
+              {slide.highlight?.icon ? Icons[slide.highlight.icon as keyof typeof Icons] : slide.highlight?.emoji && <span className="mr-2">{slide.highlight.emoji}</span>}
               {slide.highlight.emphasis ? (
                 <>
                   {slide.highlight.text.split(slide.highlight.emphasis).map((part, i, arr) => (
@@ -437,7 +478,7 @@ function GridCardsLayout({ slide }: { slide: SlideContent }) {
                 {card.badge && (
                   <Badge className={`w-fit ${card.badge.color}`}>{card.badge.text}</Badge>
                 )}
-                {card.emoji && <div className="text-3xl mb-2">{card.emoji}</div>}
+                {card.icon ? <div className="mb-2">{Icons[card.icon as keyof typeof Icons]}</div> : card.emoji && <div className="text-3xl mb-2">{card.emoji}</div>}
                 <CardTitle className={`text-lg ${card.titleColor}`}>{card.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-white">{card.description}</CardContent>
@@ -510,7 +551,7 @@ function ListWithHighlightLayout({ slide }: { slide: SlideContent }) {
               variants={itemVariants}
               className="text-center p-4 bg-black/40 rounded-xl border border-mantis/20"
             >
-              <div className="text-3xl mb-2">{item.emoji}</div>
+              <div className="mb-2">{item.icon ? Icons[item.icon as keyof typeof Icons] : item.emoji}</div>
               <p className="text-spring font-semibold">{item.title}</p>
               <p className="text-sm text-white/90">{item.description}</p>
             </motion.div>
@@ -568,7 +609,7 @@ function TeamLayout({ slide }: { slide: SlideContent }) {
                   </div>
                 ) : (
                   <div className={`w-16 h-16 mx-auto ${colors[i % colors.length].bg} rounded-full flex items-center justify-center text-2xl mb-2`}>
-                    {member.emoji}
+                    {member.icon ? Icons[member.icon as keyof typeof Icons] : member.emoji}
                   </div>
                 )}
                 <CardTitle className={`text-lg ${colors[i % colors.length].text}`}>{member.name}</CardTitle>
@@ -623,7 +664,7 @@ function ConclusionLayout({ slide }: { slide: SlideContent }) {
         {slide.highlight && (
           <motion.div variants={itemVariants} className="p-6 bg-black/60 rounded-2xl border border-spring/40">
             <p className="text-2xl font-semibold text-spring">
-              {slide.highlight.emoji} {slide.highlight.text}
+              {slide.highlight?.icon ? Icons[slide.highlight.icon as keyof typeof Icons] : slide.highlight?.emoji} {slide.highlight.text}
             </p>
           </motion.div>
         )}
@@ -632,12 +673,12 @@ function ConclusionLayout({ slide }: { slide: SlideContent }) {
       {slide.listItems && (
         <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4">
           {slide.listItems.map((item, i) => (
-            <Badge 
+              <Badge 
               key={i} 
               variant="outline" 
               className="text-lg px-4 py-2 border-mantis text-mantis"
             >
-              {item.emoji} {item.title}
+              {item.icon ? Icons[item.icon as keyof typeof Icons] : item.emoji} {item.title}
             </Badge>
           ))}
         </motion.div>
@@ -690,7 +731,7 @@ function ImageTextLayout({ slide }: { slide: SlideContent }) {
             <motion.div key={i} variants={itemVariants}>
               <Card className="bg-black/50 border-mantis/30 text-white backdrop-blur-sm">
                 <CardContent className="py-4 flex items-center gap-4">
-                  {card.emoji && <span className="text-2xl">{card.emoji}</span>}
+                  {card.icon ? Icons[card.icon as keyof typeof Icons] : card.emoji && <span className="text-2xl">{card.emoji}</span>}
                   <div>
                     <p className={`font-bold ${card.titleColor || "text-white"}`}>{card.title}</p>
                     <p className="text-white/80 text-sm">{card.description}</p>
@@ -704,8 +745,8 @@ function ImageTextLayout({ slide }: { slide: SlideContent }) {
 
       {slide.highlight && (
         <motion.div variants={itemVariants} className="mt-6 p-4 bg-black/50 rounded-2xl border border-spring/40">
-          <p className="text-lg text-center text-white">
-            {slide.highlight.emoji && <span className="mr-2">{slide.highlight.emoji}</span>}
+            <p className="text-lg text-center text-white">
+            {slide.highlight?.icon ? Icons[slide.highlight.icon as keyof typeof Icons] : slide.highlight?.emoji && <span className="mr-2">{slide.highlight.emoji}</span>}
             {slide.highlight.emphasis ? (
               <>
                 {slide.highlight.text.split(slide.highlight.emphasis).map((part, i, arr) => (
