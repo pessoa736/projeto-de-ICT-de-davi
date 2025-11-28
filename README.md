@@ -4,6 +4,7 @@ Site interativo sobre Engenharia de Energia desenvolvido com Next.js e shadcn/ui
 
 ## 🌟 Funcionalidades
 
+
 - **Fontes de Energia**: Explore diferentes fontes de energia (Solar, Eólica, Hidrelétrica, Biomassa) com informações detalhadas sobre vantagens, desvantagens e estatísticas
 - **Conceitos Fundamentais**: Aprenda sobre eficiência energética, matriz energética, smart grids e armazenamento de energia
 - **Matriz Energética Brasileira**: Visualização interativa da distribuição de fontes de energia no Brasil
