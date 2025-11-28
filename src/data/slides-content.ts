@@ -801,5 +801,38 @@ export const slidesContent: SlideContent[] = [
     footer: {
       lines: ["Obrigado pela atenção!", "ICT • UFRN • 2025"]
     }
+  },
+
+  // SLIDE 11: FONTES
+  {
+    id: "fontes",
+    type: "list-with-highlight",
+    transition: "slide-blur",
+    background: {
+      gradient: "from-[#001020] via-[#001F3F] to-[#00301a]"
+    },
+    badge: {
+      text: "Referências",
+      colors: "bg-[#DBE64C] text-[#001F3F]"
+    },
+    title: "Fontes de Informação",
+    subtitle: "Base de dados e pesquisas utilizadas",
+    listItems: [
+      { 
+        emoji: "🔗", 
+        title: "EPE - Empresa de Pesquisa Energética", 
+        description: "Matriz Energética e Elétrica. Disponível em: https://www.epe.gov.br/pt/abcdenergia/matriz-energetica-e-eletrica" 
+      },
+      { 
+        emoji: "🇺🇳", 
+        title: "Nações Unidas Brasil", 
+        description: "Objetivo de Desenvolvimento Sustentável 7. Disponível em: https://brasil.un.org/pt-br/sdgs/7" 
+      }
+    ],
+    highlight: {
+      emoji: "📚",
+      text: "A pesquisa foi fundamentada em dados oficiais do governo brasileiro e da ONU.",
+      emphasis: "dados oficiais"
+    }
   }
 ]
